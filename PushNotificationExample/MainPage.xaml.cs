@@ -12,6 +12,9 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using Windows.UI.Notifications;
+using System.Diagnostics;
+
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=391641
 
@@ -22,6 +25,24 @@ namespace PushNotificationExample
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        Uri channelUri;
+
+        public Uri ChannelUri
+        {
+            get { return this.channelUri; }
+            set
+            {
+                this.channelUri = value;
+                OnChannelUriChanged(value);
+            }
+        }
+
+        private void OnChannelUriChanged(Uri value)
+        {
+            tbxUri.Text = "Changing uri to " + value.ToString();
+            Debug.WriteLine("Changing uri to " + value.ToString());
+        }
+
         public MainPage()
         {
             this.InitializeComponent();
@@ -43,6 +64,16 @@ namespace PushNotificationExample
             // Windows.Phone.UI.Input.HardwareButtons.BackPressed event.
             // If you are using the NavigationHelper provided by some templates,
             // this event is handled for you.
+        }
+
+        private void btnCreateChannel_Click(object sender, RoutedEventArgs e)
+        {
+            SetupChannel();
+        }
+
+        private void SetupChannel()
+        {
+            
         }
     }
 }

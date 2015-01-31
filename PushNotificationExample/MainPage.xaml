@@ -9,6 +9,10 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-
+        <TextBox Name="tbxUri" TextWrapping="Wrap" Margin="10,10,10,0" Height="300"
+                 Header="Enter URI"/>
+        <Button Name="btnCreateChannel" Content="Create channel" Margin="117,320,0,263"
+                HorizontalAlignment="Right" VerticalAlignment="Top"
+                Click="btnCreateChannel_Click"/>
     </Grid>
 </Page>
