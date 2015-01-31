@@ -41,7 +41,7 @@ namespace PhoneApp1
             Dispatcher.BeginInvoke(() =>
             {
                 tbxChannel.Text = "changing uri to " + value.ToString();
-                Debug.WriteLine("changing uri to " + value.ToString());
+                Debug.WriteLine(value.ToString());
             });
         }
         // Constructor
